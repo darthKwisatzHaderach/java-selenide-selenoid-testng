@@ -8,6 +8,5 @@ public abstract class BaseTest {
     @BeforeClass
     public void BeforeClass(){
         Configuration.timeout = 10000;
-        open(MainPage.url);
     }
 }
