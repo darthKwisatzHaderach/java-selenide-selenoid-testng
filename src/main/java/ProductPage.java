@@ -3,6 +3,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.*;
 
+/** Страница с описанием товара */
 public class ProductPage extends BasePage {
     SelenideElement sizeButton = $x("//div[@data-selenium='enabled_product_size']");
     SelenideElement addToCartButton = $x("//a[@data-selenium='add_to_basket']");

@@ -1,8 +1,8 @@
 import com.codeborne.selenide.SelenideElement;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
+/** Диалог успешного добавления товара в корзину*/
 public class CartDialog extends BaseDialog {
-    SelenideElement cartDiaolg = $("#basketMessage");
-    SelenideElement message = cartDiaolg.$("h1");
+    SelenideElement cartDialog = $("#basketMessage");
+    SelenideElement message = cartDialog.$("h1");
 }
