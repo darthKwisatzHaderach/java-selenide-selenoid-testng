@@ -13,21 +13,27 @@ public class TopPanel {
     SelenideElement catalog = $("#newMenu");
     SelenideElement catalogDropdown = catalog.$x("div[@data-selenium='menu_catalog_link']");
 
-    /** Найти наименование с помощью контрола в верхней панели
-     * @param query поисковый запрос */
+    /**
+     * Найти наименование с помощью контрола в верхней панели
+     *
+     * @param query поисковый запрос
+     */
     @Step("Выполнить поиск по запросу '{0}'")
-    public CatalogPage search(String query){
+    public CatalogPage search(String query) {
         searchField.val(query);
         searchButton.click();
 
         return page(CatalogPage.class);
     }
 
-    /** Открыть раздел каталога
-     * @param categoryName название категории
-     * @param subCategoryName название подкатегории */
+    /**
+     * Открыть раздел каталога
+     *
+     * @param categoryName    название категории
+     * @param subCategoryName название подкатегории
+     */
     @Step("Открыть раздел каталога по категории '{0}' и подкатегории '{1}'")
-    public CatalogPage openCatalogSection(String categoryName, String subCategoryName){
+    public CatalogPage openCatalogSection(String categoryName, String subCategoryName) {
         catalogDropdown.hover();
         $(byText(categoryName)).hover();
         $(byText(subCategoryName)).hover().click();
