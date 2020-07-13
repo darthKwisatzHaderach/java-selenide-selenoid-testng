@@ -13,20 +13,18 @@ public class SearchTests extends BaseTest {
     @Test
     public void FindItemUsingTopPanelSearchTest(){
         MainPage mainPage = new MainPage();
-        ResultsPage resultsPage = mainPage.topPanel.search(ITEM_NAME);
+        CatalogPage catalogPage = mainPage.topPanel.search(ITEM_NAME);
 
-        resultsPage.items.get(0).shouldHave(Condition.text(ITEM_NAME));
+        catalogPage.containsItemWithName(ITEM_NAME);
     }
 
     @Test
     public void FindItemUsingCatalogTest(){
         MainPage mainPage = new MainPage();
-        ResultsPage resultsPage = mainPage.topPanel
-                .openCatalogSection("Командные виды спорта", "Коньки");
+        CatalogPage catalogPage = mainPage.topPanel.openCatalogSection("Командные виды спорта", "Коньки");
+        catalogPage.filterPanel.filterByBrand("Bauer");
 
-        resultsPage.filterPanel.filterByBrand("Bauer");
-
-        resultsPage.items.findBy(Condition.text(ITEM_NAME));
+        catalogPage.containsItemWithName(ITEM_NAME);
     }
 
     static final String ITEM_NAME ="Bauer SUPREME 2S";

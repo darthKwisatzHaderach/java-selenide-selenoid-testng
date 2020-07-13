@@ -27,6 +27,7 @@ allure-results/
 
 # Build directory
 build/
+target/
 
 # Idea directory
 .idea/
